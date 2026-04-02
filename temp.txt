@@ -1,0 +1,71 @@
+--module-path /Users/straccia/Development/javafx-sdk-25/lib
+--add-modules javafx.controls,javafx.fxml,javafx.graphics,org.controlsfx.controls
+--enable-native-access=javafx.graphics
+
+
+After SORT membershipDegrees:[1.0, 1.0, 1.0, 0.75, 0.5, 0.0]
+CAfter SORT membershipDegrees:[1.0, 1.0, 1.0, 0.75, 0.5, 0.0]
+fQ a, b, x :3.0 , 5.0 , 0.0
+i:1.0
+i+1:1.0
+CardED:0.0
+gFval:1.0
+sum:0.0
+fQ a, b, x :3.0 , 5.0 , 1.0
+i:1.0
+i+1:1.0
+CardED:0.0
+gFval:1.0
+sum:0.0
+fQ a, b, x :3.0 , 5.0 , 2.0
+i:1.0
+i+1:0.75
+CardED:0.25
+gFval:1.0
+sum:0.25
+fQ a, b, x :3.0 , 5.0 , 3.0
+i:0.75
+i+1:0.5
+CardED:0.25
+gFval:1.0
+sum:0.5
+fQ a, b, x :3.0 , 5.0 , 4.0
+i:0.5
+i+1:0.0
+CardED:0.5
+gFval:0.5
+sum:0.75
+SUM:0.75
+
+After SORT membershipDegrees:[1.0, 1.0, 1.0, 0.75, 0.5, 0.0]
+fQ a, b, x :0.25 , 0.5 , 0.0
+i val:1.0
+i+1 val:1.0
+CardED:0.0
+gFval:1.0
+sum:0.0
+fQ a, b, x :0.25 , 0.5 , 1.0
+i val:1.0
+i+1 val:1.0
+CardED:0.0
+gFval:0.0
+sum:0.0
+fQ a, b, x :0.25 , 0.5 , 2.0
+i val:1.0
+i+1 val:0.75
+CardED:0.25
+gFval:0.0
+sum:0.0
+fQ a, b, x :0.25 , 0.5 , 3.0
+i val:0.75
+i+1 val:0.5
+CardED:0.25
+gFval:0.0
+sum:0.0
+fQ a, b, x :0.25 , 0.5 , 4.0
+i val:0.5
+i+1 val:0.0
+CardED:0.5
+gFval:0.0
+sum:0.0
+SUM:0.0
