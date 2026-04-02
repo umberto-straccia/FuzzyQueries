@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/fbobillo/ontologies/2024/5/untitled-ontology-32"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/fbobillo/ontologies/2024/5/untitled-ontology-32">
+    <Prefix name="" IRI="http://www.semanticweb.org/fbobillo/ontologies/2024/5/untitled-ontology-32"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+
+    <Declaration>
+        <Class IRI="#Hotel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#hotel1"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPrice"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDistance"/>
+    </Declaration>
+
+<Declaration>
+    <DataProperty IRI="#hasDistance"/>
+</Declaration>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel1"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel1"/>
+    <Literal datatypeIRI="&xsd;double">50</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel1"/>
+    <Literal datatypeIRI="&xsd;double">100</Literal>
+</DataPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel2"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel2"/>
+    <Literal datatypeIRI="&xsd;double">60</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel2"/>
+    <Literal datatypeIRI="&xsd;double">50</Literal>
+</DataPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel3"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel3"/>
+    <Literal datatypeIRI="&xsd;double">70</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel3"/>
+    <Literal datatypeIRI="&xsd;double">50</Literal>
+</DataPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel4"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel4"/>
+    <Literal datatypeIRI="&xsd;double">80</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel4"/>
+    <Literal datatypeIRI="&xsd;double">200</Literal>
+</DataPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel5"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel5"/>
+    <Literal datatypeIRI="&xsd;double">100</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel5"/>
+    <Literal datatypeIRI="&xsd;double">250</Literal>
+</DataPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel6"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel6"/>
+    <Literal datatypeIRI="&xsd;double">120</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel6"/>
+    <Literal datatypeIRI="&xsd;double">150</Literal>
+</DataPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel7"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel7"/>
+    <Literal datatypeIRI="&xsd;double">140</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel7"/>
+    <Literal datatypeIRI="&xsd;double">100</Literal>
+</DataPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel8"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel8"/>
+    <Literal datatypeIRI="&xsd;double">140</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel8"/>
+    <Literal datatypeIRI="&xsd;double">200</Literal>
+</DataPropertyAssertion>
+
+<ClassAssertion>
+    <Class IRI="#Hotel"/>
+    <NamedIndividual IRI="#hotel9"/>
+</ClassAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasPrice"/>
+    <NamedIndividual IRI="#hotel9"/>
+    <Literal datatypeIRI="&xsd;double">155</Literal>
+</DataPropertyAssertion>
+<DataPropertyAssertion>
+    <DataProperty IRI="#hasDistance"/>
+    <NamedIndividual IRI="#hotel9"/>
+    <Literal datatypeIRI="&xsd;double">50</Literal>
+</DataPropertyAssertion>
+    <Declaration>
+        <DataProperty IRI="#hasPrice"/>
+    </Declaration>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasPrice"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPrice"/>
+        <Class IRI="#Hotel"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPrice"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+        <Declaration>
+            <DataProperty IRI="#hasDistance"/>
+        </Declaration>
+        <FunctionalDataProperty>
+            <DataProperty IRI="#hasDistance"/>
+        </FunctionalDataProperty>
+        <DataPropertyDomain>
+            <DataProperty IRI="#hasDistance"/>
+            <Class IRI="#Hotel"/>
+        </DataPropertyDomain>
+        <DataPropertyRange>
+            <DataProperty IRI="#hasDistance"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
+        </DataPropertyRange>
+    <Declaration>
+        <Datatype IRI="#LowPrice"/>
+    </Declaration>
+    <DatatypeDefinition>
+        <Datatype IRI="#LowPrice"/>
+        <DataIntersectionOf>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;double">0.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:double"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;double">10000.0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataIntersectionOf>
+    </DatatypeDefinition>
+        <Declaration>
+            <Datatype IRI="#HighDistance"/>
+        </Declaration>
+        <DatatypeDefinition>
+            <Datatype IRI="#HighDistance"/>
+            <DataIntersectionOf>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:double"/>
+                    <FacetRestriction facet="&xsd;minInclusive">
+                        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:double"/>
+                    <FacetRestriction facet="&xsd;maxInclusive">
+                        <Literal datatypeIRI="&xsd;double">10000.0</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataIntersectionOf>
+        </DatatypeDefinition>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#LowPrice</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;leftshoulder&quot; a=&quot;60&quot; b=&quot;100&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#fuzzyLabel"/>
+        <IRI>#HighDistance</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&lt;fuzzyOwl2 fuzzyType=&quot;datatype&quot;&gt;
+&lt;Datatype type=&quot;rightshoulder&quot; a=&quot;75&quot; b=&quot;150&quot; /&gt;
+&lt;/fuzzyOwl2&gt;</Literal>
+    </AnnotationAssertion>
+
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->

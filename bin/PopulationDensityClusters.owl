@@ -1,0 +1,75 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://sid.cps.unizar.es/temp.owl>
+
+
+AnnotationProperty: <http://sid.cps.unizar.es/temp.owl#fuzzyLabel>
+
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#VeryHighPopulationDensity>
+
+    Annotations: 
+        <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> "<fuzzyOwl2 fuzzyType=\"datatype\">
+<Datatype type=\"rightshoulder\" a=\"17585.19\" b=\"602559.79\" />
+</fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-3266.6"^^xsd:decimal , <= "605826.75"^^xsd:decimal]
+    
+    
+Datatype: rdf:PlainLiteral
+
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#VeryLowPopulationDensity>
+
+    Annotations: 
+        <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> "<fuzzyOwl2 fuzzyType=\"datatype\">
+<Datatype type=\"leftshoulder\" a=\"322.53\" b=\"1561.01\" />
+</fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-3266.6"^^xsd:decimal , <= "605826.75"^^xsd:decimal]
+    
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#NeutralPopulationDensity>
+
+    Annotations: 
+        <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> "<fuzzyOwl2 fuzzyType=\"datatype\">
+<Datatype type=\"triangular\" a=\"1561.01\" b=\"5725.02\" c=\"17585.19\" />
+</fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-3266.6"^^xsd:decimal , <= "605826.75"^^xsd:decimal]
+    
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#HighPopulationDensity>
+
+    Annotations: 
+        <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> "<fuzzyOwl2 fuzzyType=\"datatype\">
+<Datatype type=\"triangular\" a=\"5725.02\" b=\"17585.19\" c=\"602559.79\" />
+</fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-3266.6"^^xsd:decimal , <= "605826.75"^^xsd:decimal]
+    
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#LowPopulationDensity>
+
+    Annotations: 
+        <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> "<fuzzyOwl2 fuzzyType=\"datatype\">
+<Datatype type=\"triangular\" a=\"322.53\" b=\"1561.01\" c=\"5725.02\" />
+</fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-3266.6"^^xsd:decimal , <= "605826.75"^^xsd:decimal]
+    
+    
+Datatype: xsd:decimal
+
+    
