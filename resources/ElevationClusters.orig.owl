@@ -1,0 +1,71 @@
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://sid.cps.unizar.es/temp.owl>
+
+
+AnnotationProperty: <http://sid.cps.unizar.es/temp.owl#fuzzyLabel>
+
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#VeryHighElevation>
+
+Annotations: <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> 
+            "<fuzzyOwl2 fuzzyType=\"datatype\">
+                <Datatype type=\"rightshoulder\" a=\"208000.05\" b=\"8.9751681458E10\" />
+            </fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-4.7566043899E8"^^xsd:decimal , <= "9.022734158299E10"^^xsd:decimal]
+    
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#HighElevation>
+
+Annotations: <http://sid.cps.unizar.es/temp.owl#fuzzyLabel>  
+            "<fuzzyOwl2 fuzzyType=\"datatype\">
+                <Datatype type=\"triangular\" a=\"1534.14\" b=\"208000.05\" c=\"8.9751681458E10\" /> 
+             </fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-4.7566043899E8"^^xsd:decimal , <= "9.022734158299E10"^^xsd:decimal]
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#LowElevation>
+
+Annotations: <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> 
+             "<fuzzyOwl2 fuzzyType=\"datatype\">
+                <Datatype type=\"triangular\" a=\"126.42\" b=\"444.81\" c=\"1534.14\" />
+             </fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-4.7566043899E8"^^xsd:decimal , <= "9.022734158299E10"^^xsd:decimal]
+    
+Datatype: <http://sid.cps.unizar.es/temp.owl#NeutralElevation>
+
+Annotations: <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> 
+             "<fuzzyOwl2 fuzzyType=\"datatype\">
+                <Datatype type=\"triangular\" a=\"444.81\" b=\"1534.14\" c=\"208000.05\" />
+            </fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-4.7566043899E8"^^xsd:decimal , <= "9.022734158299E10"^^xsd:decimal]
+    
+    
+Datatype: rdf:PlainLiteral
+
+Datatype: <http://sid.cps.unizar.es/temp.owl#VeryLowElevation>
+
+    Annotations: <http://sid.cps.unizar.es/temp.owl#fuzzyLabel> 
+                "<fuzzyOwl2 fuzzyType=\"datatype\">
+                    <Datatype type=\"leftshoulder\" a=\"126.42\" b=\"444.81\" />
+                </fuzzyOwl2>"
+    
+    EquivalentTo: 
+        xsd:decimal[>= "-4.7566043899E8"^^xsd:decimal , <= "9.022734158299E10"^^xsd:decimal]
+    
+Datatype: xsd:decimal
+
+    

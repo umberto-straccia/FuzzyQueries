@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.controlsfx.control.*?>
+
+<VBox alignment="TOP_CENTER" minWidth="300.0" prefHeight="800.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GUIController">
+   <children>
+      <Text text="Quantified Queries Semantic Solver" textAlignment="CENTER" wrappingWidth="367.13671875">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Text>
+      <VBox alignment="CENTER" prefHeight="76.0" prefWidth="425.0" spacing="5.0">
+         <children>
+            <Text text="Data origin" textAlignment="CENTER" />
+            <SegmentedButton>
+               <buttons>
+                  <ToggleButton onAction="#setOntologyOrigin" text="Ontology" />
+                  <ToggleButton onAction="#setKnowledgeGraphOrigin" text="Knowledge Graph" />
+               </buttons>
+            </SegmentedButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="107.0" prefWidth="396.0" spacing="20.0">
+         <children>
+            <VBox fx:id="ontologyVBox" alignment="TOP_CENTER" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="437.0" spacing="15.0">
+                     <children>
+                        <Text text="Ontology Path:" textAlignment="CENTER" wrappingWidth="85.13671875" />
+                        <TextField fx:id="ontologyPathField" prefHeight="25.0" prefWidth="187.0" />
+                        <Button fx:id="searchButton" onAction="#onSearchOntologyPath" text="Search..." />
+                     </children>
+                  </HBox>
+                  <Button fx:id="startReasonerButton" onAction="#onStartReasonerClick" text="Load Resources" />
+                  <Text fx:id="validOntologyPathText" fill="#d72f2f" opacity="0" text="File Path not valid" textAlignment="CENTER" wrappingWidth="156.13671875" />
+               </children>
+            </VBox>
+            <VBox fx:id="knowledgeGraphVBox" alignment="CENTER" managed="false" spacing="15.0" visible="false">
+               <children>
+                  <HBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <Text text="Knowledge Graph Path:" textAlignment="CENTER" wrappingWidth="105.13671875" />
+                        <TextField fx:id="kgPathField" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="loadEndpointButton" onAction="#onLoadKnowledgeGraph" text="Load Resources" />
+                  <Text fx:id="validKGPathText" fill="#d72f2f" opacity="0" text="URL not valid" textAlignment="CENTER" wrappingWidth="156.13671875" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="556.0" prefWidth="388.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="401.0" prefWidth="368.0" spacing="15.0">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <SegmentedButton>
+                              <buttons>
+                                 <ToggleButton onAction="#setTypeQuery1" text="Type I" />
+                                 <ToggleButton onAction="#setTypeQuery2" text="Type II" />
+                              </buttons>
+                           </SegmentedButton>
+                        </HBox>
+                        <Text fx:id="typeQueryText" text="Type I Query" textAlignment="CENTER" wrappingWidth="158.13671875" />
+                        <Text fx:id="typeQuerySubtext" fill="#8a7b7b" text="'Q of X are G'" textAlignment="CENTER" wrappingWidth="231.13671875">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <Text text="Parameters" wrappingWidth="77.13671875">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin></Text>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="369.0" spacing="10.0">
+                           <children>
+                              <Text text="Q" />
+                              <ComboBox fx:id="boxQ" editable="true" prefHeight="25.0" prefWidth="192.0" promptText="Select a Quantifier or Create a New One">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin></ComboBox>
+                              <Text text="Rel" />
+                              <ToggleSwitch fx:id="isAbsoluteToggleSwitch" prefHeight="18.0" prefWidth="28.0" />
+                              <Text text="Abs" />
+                              <Label text="ⓘ">
+                                 <tooltip>
+                                    <Tooltip fx:id="quantifierTooltip" text="Select a Quantifier from the list. To create a new one, write the fuzzy function and its parameters inside brackets. Example: Triangular(0.3,0.5,0.7)" wrapText="true" />
+                                 </tooltip>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Text text="X" />
+                              <SearchableComboBox fx:id="boxX" editable="true" prefHeight="25.0" prefWidth="250.0" promptText="Class">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin></SearchableComboBox>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="type2QueryParams" alignment="CENTER" managed="false" spacing="10.0" visible="false">
+                           <children>
+                              <HBox fx:id="type2F" alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Text text="L2" />
+                                    <SearchableComboBox fx:id="boxF" editable="true" prefHeight="25.0" prefWidth="250.0" promptText="Fuzzy Datatype of F">
+                                    <HBox.margin>
+                                       <Insets left="5.0" />
+                                    </HBox.margin></SearchableComboBox>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="type2h" alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Text text="d2" />
+                                    <SearchableComboBox fx:id="boxh" editable="true" prefHeight="25.0" prefWidth="250.0" promptText="Numeric Property of F">
+                                    <HBox.margin>
+                                       <Insets left="5.0" />
+                                    </HBox.margin></SearchableComboBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Text text="L1" />
+                              <SearchableComboBox fx:id="boxG" editable="true" prefHeight="25.0" prefWidth="250.0" promptText="Fuzzy Datatype of G">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin></SearchableComboBox>
+                              <Button fx:id="importG" onAction="#onImportGClick" text="Imp." />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="376.0" spacing="10.0">
+                           <children>
+                              <Text text="d1" />
+                              <SearchableComboBox fx:id="boxd" editable="true" prefHeight="25.0" prefWidth="250.0" promptText="Numeric Property of G">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin></SearchableComboBox>
+                              <Button fx:id="exportD" onAction="#onExportDClick" text="Exp." />
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <Text text="Method" wrappingWidth="287.13671875" />
+                        <ComboBox fx:id="boxMethods" prefHeight="25.0" prefWidth="247.0">
+                           <VBox.margin>
+                              <Insets left="30.0" />
+                           </VBox.margin></ComboBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <Text text="Query" wrappingWidth="287.13671875">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </Text>
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Text text="Q of X are G" textAlignment="CENTER" wrappingWidth="224.13671875" />
+                        <Button fx:id="runQuery" onAction="#onRunQueryClick" text="Run Query" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox fx:id="resVbox" alignment="CENTER" opacity="0.0" spacing="5.0">
+               <children>
+                  <Text text="Result." wrappingWidth="287.13671875">
+                  <VBox.margin>
+                     <Insets left="30.0" />
+                  </VBox.margin></Text>
+                  <Text fx:id="queryText" text="&quot;&quot;Consulta real&quot;&quot;" textAlignment="CENTER" wrappingWidth="224.13671875" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text text="Method: " textAlignment="CENTER" wrappingWidth="125.13671875" />
+                        <Text fx:id="methodText" text="((Metodo))" textAlignment="CENTER" wrappingWidth="129.13671875" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text text="Res:" textAlignment="CENTER" wrappingWidth="127.13671875" />
+                        <Text fx:id="resText" text="((Numero))" textAlignment="CENTER" wrappingWidth="129.13671875" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="errVbox" alignment="CENTER" opacity="0.0" spacing="5.0">
+               <children>
+                  <Text fill="#bf1313" text="Error:" wrappingWidth="287.13671875" />
+                  <Text fx:id="errText" fill="#b22f2f" text="&quot;&quot;Texto de error&quot;&quot;" textAlignment="CENTER" wrappingWidth="224.13671875" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
