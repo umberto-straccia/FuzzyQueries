@@ -17,26 +17,22 @@ public class ZadehType1 extends Type1Query {
     }
 
     public double run(boolean verbose) throws Exception {
-
         membershipFunction = fdp.getFuzzyFunction(L);
-        
         checkErrors();
-
         ArrayList<Double> values = fdp.getPropertyValues(x, d);
         double sigmaCount = 0;
         for (Double value : values) {
             if (value != null) {
                 sigmaCount += membershipFunction.getMembershipDegree(value);
-            }
+            }  
         }
-        return q.getFunc().getMembershipDegree(sigmaCount);
+        if (q.getqType() == QuantifierType.ABSOLUTE)
+	        return q.getFunc().getMembershipDegree(sigmaCount);
+	    else  // Relative quantifier
+	        return q.getFunc().getMembershipDegree(sigmaCount / values.size());
     }
 
     private void checkErrors() throws Exception {
-        if (q.getqType() == QuantifierType.RELATIVE) {
-            throw new IllegalArgumentException("Quantifier must be absolute");
-        }
-
         if (membershipFunction == null) {
             throw new NoSuchElementException("There is no valid function in " + L);
         }

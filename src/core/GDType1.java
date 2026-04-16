@@ -19,15 +19,8 @@ public class GDType1 extends Type1Query{
     }
 
     public double run(boolean verbose) throws Exception {
-        
         membershipFunction = fdp.getFuzzyFunction(L);
-        
-        //System.out.println("GD(Type I)");
-        //System.out.println("Q type: " + q.getqType());
-        
-        
-        //checkErrors();
-
+        checkErrors();
         ArrayList<Double> values = fdp.getPropertyValues(x, d);
         ArrayList<Double> membershipDegrees = new ArrayList<>();
 
@@ -59,11 +52,11 @@ public class GDType1 extends Type1Query{
         for (int i=0; i <= n; i++) {
             double cardED = membershipDegrees.get(i) - membershipDegrees.get(i+1);
             //double gFval = q.getFunc().getMembershipDegree(i);
-            
-            //System.out.println("i val:" + membershipDegrees.get(i));
-            //System.out.println("i+1 val:" + membershipDegrees.get(i+1));
-            //System.out.println("CardED:" + cardED);
-            
+/*          
+            System.out.println("i val:" + membershipDegrees.get(i));
+            System.out.println("i+1 val:" + membershipDegrees.get(i+1));
+            System.out.println("CardED:" + cardED);
+*/
             double gFval = 0;
             if (q.getqType() == QuantifierType.ABSOLUTE) {
             	gFval = fQ.getMembershipDegree(i);
@@ -71,15 +64,13 @@ public class GDType1 extends Type1Query{
             } else { // Relative quantifier
             	//double deg = n*membershipDegrees.get(i);
             	double qval = i/n;
-            	//System.out.println("qval:" + qval);
+            	System.out.println("qval:" + qval);
             	gFval = fQ.getMembershipDegree(qval);
             	sum = t_conorm(sum, cardED * gFval);
             }
-            
-            
-            
-            //System.out.println("gFval:" + gFval);
-            //System.out.println("sum:" + sum);
+
+//            System.out.println("gFval:" + gFval);
+//            System.out.println("sum:" + sum);
             
         }
         //System.out.println("SUM:" + sum);
@@ -92,10 +83,6 @@ public class GDType1 extends Type1Query{
     }
 
     private void checkErrors() throws Exception {
-        if (q.getqType() == QuantifierType.RELATIVE) {
-            throw new IllegalArgumentException("Quantifier must be absolute");
-        }
-
         if (membershipFunction == null) {
             throw new NoSuchElementException("Membership function not found");
         }
