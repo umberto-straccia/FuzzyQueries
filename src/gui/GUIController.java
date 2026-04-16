@@ -20,6 +20,7 @@ import core.GDType1;
 import core.GDType2;
 import core.Quantifier;
 import core.QuantifierType;
+import core.YagerType1;
 import core.ZadehType1;
 import core.ZadehType2;
 import javafx.collections.FXCollections;
@@ -358,14 +359,10 @@ public class GUIController {
             }
 
             Quantifier q;
-            //boolean absToggle =  isAbsoluteToggleSwitch.isSelected();
-        	//System.out.println("ABS : " + absToggle);
             try {
                 if (Arrays.stream(Quantifier.StdQuantifier.values()).anyMatch(stdq -> stdq.name().equals(q_String))) {
-                	//System.out.println("IF brench : " + q_String);
-                	q = new Quantifier(Quantifier.StdQuantifier.valueOf(q_String));
+                    q = new Quantifier(Quantifier.StdQuantifier.valueOf(q_String));
                 } else {
-                	//System.out.println("ELSE brench : " + isAbsoluteToggleSwitch.isSelected());
                     QuantifierType qType = isAbsoluteToggleSwitch.isSelected() ?  QuantifierType.ABSOLUTE : QuantifierType.RELATIVE;
                     q = DataHandler.parseQuantifier(q_String, qType);
                 }
@@ -380,6 +377,9 @@ public class GUIController {
             switch (method) {
                 case "Zadeh(Type I)":
                     query = new ZadehType1(fuzzyDataProvider,q,x,g,d);
+                    break;
+                case "Yager(Type I)":
+                    query = new YagerType1(fuzzyDataProvider,q,x,g,d);
                     break;
                 case "GD(Type I)":
                     query = new GDType1(fuzzyDataProvider,q,x,g,d);
@@ -450,6 +450,7 @@ public class GUIController {
     private void addSupportedMethods() {
         supportedMethodsType1 = FXCollections.observableArrayList();
         supportedMethodsType1.add("Zadeh(Type I)");
+        supportedMethodsType1.add("Yager(Type I)");
         supportedMethodsType1.add("GD(Type I)");
         supportedMethodsType2 = FXCollections.observableArrayList();
         supportedMethodsType2.add("Zadeh(Type II)");
